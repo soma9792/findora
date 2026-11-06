@@ -79,5 +79,14 @@
     "store": "amazon",
     "image": "https://i.pinimg.com/736x/da/9b/24/da9b2447de23d3c131d8820257938a81.jpg",
     "link": "https://link.amazon/B05YsvevD"
+  },
+  {
+    "id": "scotch-brite-sponge-wipes",
+    "title": "Scotch-Brite Reusable Sponge Wipes (Pack of 4)",
+    "desc": "Super-absorbent, lint-free reusable cellulose sponge wipes designed for streak-free kitchen slab cleaning, dish drying, and spill cleanups.",
+    "category": "Festive & Home",
+    "store": "amazon",
+    "image": "https://i.pinimg.com/736x/97/53/53/975353b34f2e88625b9c980824bb7605.jpg",
+    "link": "https://link.amazon/B0fm7EPNA"
   }
 ]
