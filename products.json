@@ -88,5 +88,16 @@
     "store": "amazon",
     "image": "https://i.pinimg.com/736x/97/53/53/975353b34f2e88625b9c980824bb7605.jpg",
     "link": "https://link.amazon/B0fm7EPNA"
+  },
+  {
+    "id": "ajio-men-watches-sale",
+    "title": "Min 75% Off on Men's Branded Watches",
+    "desc": "Grab up to 75% discount on top international and premium men's watch brands during the Ajio flash deal sale.",
+    "category": "Fashion & Apparel",
+    "store": "custom",
+    "image": "https://asset22.ckassets.com/resources/image/staticpage_images/08-1792261765.png",
+    "link": "https://ajiio.in/LXeWM32",
+    "customName": "Ajio",
+    "customColor": "#2c4152"
   }
 ]
