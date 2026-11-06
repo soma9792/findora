@@ -1,23 +1,5 @@
 [
   {
-    "id": "tumbling-tower",
-    "title": "Toy Imagine 54 Pcs Tumbling Tower",
-    "desc": "Classic wooden stacking balance blocks with dice rules, perfect for family game nights and brain teasing.",
-    "category": "Games",
-    "store": "amazon",
-    "image": "https://images.unsplash.com/photo-1618842676088-c4d48a6a7c9d?w=600&auto=format&fit=crop&q=80",
-    "link": "https://amazon.in"
-  },
-  {
-    "id": "desidiya-lights",
-    "title": "DesiDiya 35 Ft LED String Lights",
-    "desc": "Warm white 360-degree radiant bulb copper lights ideal for Diwali, Christmas, balcony, and home ambient decor.",
-    "category": "Decor",
-    "store": "amazon",
-    "image": "https://images.unsplash.com/photo-1513694203232-719a280e022f?w=600&auto=format&fit=crop&q=80",
-    "link": "https://amazon.in"
-  },
-  {
     "id": "poinsettia-flowers",
     "title": "12Pcs Gold Christmas Poinsettia Flowers",
     "desc": "Glittery artificial tree clip-on ornaments suitable for wreaths, Christmas tree styling, and holiday celebrations.",
