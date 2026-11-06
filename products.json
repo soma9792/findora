@@ -88,5 +88,16 @@
     "store": "amazon",
     "image": "https://i.pinimg.com/736x/97/53/53/975353b34f2e88625b9c980824bb7605.jpg",
     "link": "https://link.amazon/B0fm7EPNA"
+  },
+  {
+    "id": "lakme-set-of-3-burgundy-passion",
+    "title": "Set of 3 Lakme 9to5 Powerplay Priming Matte Lipstick - Burgundy Passion",
+    "desc": "Get 16-hour intense matte burgundy lips with this set of 3 water-resistant, transfer-proof lipsticks featuring a 2x weightless primer and natural shea & cocoa butter nourishment.",
+    "category": "Fashion & Apparel",
+    "store": "custom",
+    "image": "https://github.com/soma9792/findora/blob/main/lakme.jpg?raw=true",
+    "link": "https://myntr.it/vp7abYk",
+    "customName": "Myntra",
+    "customColor": "#ff3f6c"
   }
 ]
