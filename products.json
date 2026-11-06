@@ -99,5 +99,16 @@
     "link": "https://ajiio.in/LXeWM32",
     "customName": "Ajio",
     "customColor": "#2c4152"
+  },
+  {
+    "id": "lakme-beauty-products-sale",
+    "title": "Upto 70% Off on Lakme Beauty Products",
+    "desc": "Get up to 70% discount on authentic Lakme makeup, skincare essentials, lipsticks, and beauty palettes exclusively on Myntra.",
+    "category": "Beauty & Skincare",
+    "store": "custom",
+    "image": "https://asset22.ckassets.com/resources/image/staticpage_images/Myntra%20DC%2089-1790581078.png",
+    "link": "https://myntr.it/8ipd3eZ",
+    "customName": "Myntra",
+    "customColor": "#ff3f6c"
   }
 ]
