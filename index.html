@@ -3,64 +3,282 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Findora | Trending Finds & Gadgets</title>
+  <title>FINDORA | Verified Picks & Trending Gadgets</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #0b0f19;
-      --card-bg: rgba(23, 32, 54, 0.7);
-      --border: rgba(255, 255, 255, 0.1);
-      --text: #f8fafc;
-      --muted: #94a3b8;
-      --accent: #38bdf8;
+      --bg-dark: #07090e;
+      --card-bg: rgba(18, 24, 38, 0.7);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --primary-neon: #6366f1;
+      --accent-pink: #ec4899;
+      --accent-cyan: #06b6d4;
       --amazon: #ff9900;
       --flipkart: #2874f0;
-      --meesho: #ec4899;
-      --danger: #ef4444;
+      --meesho: #f43397;
     }
+
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
     }
+
     body {
-      background: radial-gradient(circle at top, #1e293b 0%, #0b0f19 100%);
-      color: var(--text);
+      background-color: var(--bg-dark);
+      background-image: 
+        radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.15) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(236, 72, 153, 0.12) 0px, transparent 50%);
+      background-attachment: fixed;
+      color: var(--text-main);
       min-height: 100vh;
-      padding: 30px 16px 60px;
+      padding: 24px 16px 80px;
     }
+
     .container {
-      max-width: 1050px;
+      max-width: 1140px;
       margin: 0 auto;
     }
-    header {
-      text-align: center;
-      margin-bottom: 30px;
-      position: relative;
+
+    /* Top Nav */
+    .top-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 40px;
+      padding: 0 4px;
     }
-    .brand {
-      font-size: 34px;
+    .brand-wrap {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .brand-logo {
+      font-size: 24px;
       font-weight: 800;
-      background: linear-gradient(135deg, #38bdf8, #818cf8);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      letter-spacing: -0.5px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #fff;
     }
-    .tagline {
-      color: var(--muted);
-      margin-top: 6px;
-      font-size: 15px;
+    .brand-icon {
+      background: linear-gradient(135deg, #f43f5e, #8b5cf6);
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
     }
-    .admin-trigger {
-      margin-top: 15px;
-      display: inline-block;
+    .verified-tag {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      background: rgba(99, 102, 241, 0.2);
+      border: 1px solid rgba(99, 102, 241, 0.4);
+      color: #a5b4fc;
+      padding: 4px 10px;
+      border-radius: 20px;
+      text-transform: uppercase;
+    }
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .badge-sync {
       font-size: 12px;
-      color: var(--muted);
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid var(--border);
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--card-border);
+      padding: 6px 14px;
+      border-radius: 20px;
+    }
+    .sync-dot {
+      width: 7px;
+      height: 7px;
+      background: #10b981;
+      border-radius: 50%;
+      box-shadow: 0 0 8px #10b981;
+    }
+    .admin-key-btn {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid var(--card-border);
+      color: var(--text-muted);
+      font-size: 12px;
+      font-weight: 600;
       padding: 6px 14px;
       border-radius: 20px;
       cursor: pointer;
+      transition: all 0.2s ease;
     }
+    .admin-key-btn:hover {
+      background: rgba(255, 255, 255, 0.12);
+      color: #fff;
+    }
+
+    /* Hero */
+    .hero {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+    .hero-stores-pill {
+      display: inline-block;
+      font-size: 13px;
+      font-weight: 600;
+      color: #cbd5e1;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--card-border);
+      padding: 6px 18px;
+      border-radius: 30px;
+      margin-bottom: 20px;
+    }
+    .hero-stores-pill span {
+      margin: 0 4px;
+    }
+    .hero h1 {
+      font-size: clamp(34px, 6vw, 56px);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -1px;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, #ffffff 40%, #cbd5e1 70%, #f472b6 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero p {
+      font-size: 16px;
+      color: var(--text-muted);
+      max-width: 680px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* Search & Categories */
+    .search-section {
+      max-width: 680px;
+      margin: 0 auto 35px;
+    }
+    .search-box {
+      position: relative;
+      margin-bottom: 20px;
+    }
+    .search-box input {
+      width: 100%;
+      background: rgba(18, 24, 38, 0.85);
+      border: 1px solid var(--card-border);
+      padding: 14px 20px 14px 48px;
+      border-radius: 14px;
+      color: #fff;
+      font-size: 15px;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .search-box input:focus {
+      border-color: var(--primary-neon);
+      box-shadow: 0 0 20px rgba(99, 102, 241, 0.25);
+    }
+    .search-box svg {
+      position: absolute;
+      left: 18px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+      pointer-events: none;
+    }
+    .categories {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+    .cat-chip {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--card-border);
+      color: var(--text-muted);
+      padding: 8px 18px;
+      border-radius: 25px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .cat-chip:hover, .cat-chip.active {
+      background: linear-gradient(135deg, #6366f1, #8b5cf6);
+      color: #fff;
+      border-color: transparent;
+      box-shadow: 0 4px 15px rgba(99, 102, 241, 0.35);
+    }
+
+    /* Admin Add Panel */
+    .admin-panel {
+      display: none;
+      background: rgba(18, 24, 38, 0.95);
+      border: 1px solid rgba(99, 102, 241, 0.3);
+      padding: 24px;
+      border-radius: 20px;
+      margin-bottom: 40px;
+      backdrop-filter: blur(20px);
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    }
+    .admin-panel-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .admin-panel h3 {
+      font-size: 18px;
+      font-weight: 700;
+      color: #a5b4fc;
+    }
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+    .form-group input, .form-group select, .form-group textarea {
+      width: 100%;
+      background: #0f1523;
+      border: 1px solid var(--card-border);
+      padding: 12px 14px;
+      border-radius: 10px;
+      color: #fff;
+      font-size: 13px;
+      outline: none;
+    }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+      border-color: var(--primary-neon);
+    }
+    .admin-btn-row {
+      display: flex;
+      gap: 10px;
+    }
+    .btn-submit {
+      background: linear-gradient(135deg, #6366f1, #a855f7);
+      color: #fff;
+      font-weight: 700;
+      padding: 12px 24px;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      font-size: 14px;
+      transition: opacity 0.2s;
+    }
+    .btn-submit:hover { opacity: 0.9; }
+
+    /* Product Grid */
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -68,27 +286,28 @@
     }
     .card {
       background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 16px;
+      border: 1px solid var(--card-border);
+      border-radius: 18px;
       padding: 16px;
-      backdrop-filter: blur(12px);
+      backdrop-filter: blur(14px);
       display: flex;
       flex-direction: column;
+      transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
       position: relative;
-      transition: transform 0.3s ease, border-color 0.3s ease;
     }
     .card:hover {
-      transform: translateY(-4px);
-      border-color: rgba(56, 189, 248, 0.4);
+      transform: translateY(-5px);
+      border-color: rgba(99, 102, 241, 0.4);
+      box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.5);
     }
     .target-highlight {
-      border-color: var(--accent) !important;
-      box-shadow: 0 0 25px rgba(56, 189, 248, 0.6) !important;
+      border-color: #38bdf8 !important;
+      box-shadow: 0 0 30px rgba(56, 189, 248, 0.6) !important;
     }
     .card-img-wrap {
       width: 100%;
-      height: 200px;
-      background: #1e293b;
+      height: 220px;
+      background: #0d121f;
       border-radius: 12px;
       overflow: hidden;
       margin-bottom: 14px;
@@ -97,147 +316,192 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    .card:hover .card-img-wrap img {
+      transform: scale(1.04);
+    }
+    .card-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
     }
     .badge {
       font-size: 11px;
       font-weight: 700;
       text-transform: uppercase;
-      padding: 4px 8px;
+      padding: 4px 10px;
       border-radius: 6px;
-      width: fit-content;
-      margin-bottom: 8px;
-      background: rgba(56, 189, 248, 0.15);
-      color: var(--accent);
+      background: rgba(99, 102, 241, 0.15);
+      color: #818cf8;
+      border: 1px solid rgba(99, 102, 241, 0.25);
     }
+    .copy-anchor-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      cursor: pointer;
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      transition: color 0.2s;
+    }
+    .copy-anchor-btn:hover { color: #fff; }
     .card-title {
       font-size: 16px;
-      font-weight: 600;
+      font-weight: 700;
       line-height: 1.4;
       margin-bottom: 8px;
     }
     .card-desc {
       font-size: 13px;
-      color: var(--muted);
+      color: var(--text-muted);
       line-height: 1.5;
-      margin-bottom: 16px;
+      margin-bottom: 18px;
       flex-grow: 1;
     }
-    .btn {
+    .btn-buy {
       display: block;
       width: 100%;
       text-align: center;
-      padding: 11px;
+      padding: 12px;
       font-size: 14px;
-      font-weight: 600;
+      font-weight: 700;
       text-decoration: none;
-      border-radius: 10px;
-      border: none;
-      cursor: pointer;
+      border-radius: 12px;
+      color: #fff;
+      transition: opacity 0.2s, transform 0.2s;
     }
-    .btn-amazon { background-color: var(--amazon); color: #000; }
-    .btn-flipkart { background-color: var(--flipkart); color: #fff; }
-    .btn-meesho { background-color: var(--meesho); color: #fff; }
+    .btn-buy:hover {
+      opacity: 0.95;
+      transform: scale(1.01);
+    }
+
+    /* Admin Action Row in Card */
     .card-admin-actions {
       display: none;
-      gap: 8px;
       margin-top: 10px;
     }
-    .btn-delete {
-      background: rgba(239, 68, 68, 0.2);
-      border: 1px solid var(--danger);
-      color: var(--danger);
-      padding: 6px;
+    .btn-del {
+      width: 100%;
+      background: rgba(239, 68, 68, 0.15);
+      border: 1px solid rgba(239, 68, 68, 0.4);
+      color: #f87171;
       font-size: 12px;
-      border-radius: 6px;
-      cursor: pointer;
-      width: 100%;
-    }
-    /* Modal / Admin Panel */
-    .admin-panel {
-      display: none;
-      background: #111827;
-      border: 1px solid var(--border);
-      padding: 20px;
-      border-radius: 16px;
-      margin-bottom: 30px;
-    }
-    .admin-panel h3 { margin-bottom: 15px; font-size: 18px; color: var(--accent); }
-    .form-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 12px;
-      margin-bottom: 15px;
-    }
-    .form-group input, .form-group select, .form-group textarea {
-      width: 100%;
-      padding: 10px;
+      font-weight: 600;
+      padding: 8px;
       border-radius: 8px;
-      border: 1px solid var(--border);
-      background: #1f2937;
-      color: #fff;
-      font-size: 13px;
-    }
-    .admin-btn-row { display: flex; gap: 10px; }
-    .btn-submit {
-      background: var(--accent);
-      color: #000;
-      font-weight: 700;
-      padding: 10px 20px;
-      border-radius: 8px;
-      border: none;
       cursor: pointer;
     }
+    .btn-del:hover { background: rgba(239, 68, 68, 0.3); }
+
+    /* Footer */
     footer {
-      margin-top: 60px;
+      margin-top: 80px;
       text-align: center;
       font-size: 12px;
-      color: var(--muted);
-      border-top: 1px solid var(--border);
-      padding-top: 24px;
+      color: #64748b;
+      border-top: 1px solid var(--card-border);
+      padding-top: 30px;
+      line-height: 1.8;
     }
   </style>
 </head>
 <body>
 
   <div class="container">
-    <header>
-      <div class="brand">Findora</div>
-      <p class="tagline">Trending Finds, Smart Tech & Lifestyle Picks</p>
-      <div class="admin-trigger" id="adminTriggerBtn" onclick="openAdminAuth()">⚙️ Manage Products</div>
-    </header>
+    <!-- Top Nav -->
+    <div class="top-nav">
+      <div class="brand-wrap">
+        <div class="brand-logo">
+          <div class="brand-icon">⚡</div>
+          FINDORA
+        </div>
+        <span class="verified-tag">VERIFIED PICKS</span>
+      </div>
+      <div class="nav-actions">
+        <div class="badge-sync">
+          <div class="sync-dot"></div>
+          Multi-Store Sync
+        </div>
+        <button class="admin-key-btn" onclick="openAdminAuth()">⚙️ Admin Mode</button>
+      </div>
+    </div>
+
+    <!-- Hero -->
+    <div class="hero">
+      <div class="hero-stores-pill">
+        <span style="color:var(--amazon)">Amazon</span> • 
+        <span style="color:var(--flipkart)">Flipkart</span> • 
+        <span style="color:var(--meesho)">Meesho</span> Curated Deals
+      </div>
+      <h1>Trending Finds & Viral Gadgets</h1>
+      <p>Curated directly from our Pinterest channels. Tap any product to verify prices, read specs, and unlock exclusive marketplace promotions.</p>
+    </div>
+
+    <!-- Search & Categories -->
+    <div class="search-section">
+      <div class="search-box">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        <input type="text" id="searchInput" placeholder="Search products by name, tag, or category..." onkeyup="filterProducts()">
+      </div>
+      <div class="categories" id="catChips">
+        <button class="cat-chip active" onclick="selectCategory('all', this)">All Items</button>
+        <button class="cat-chip" onclick="selectCategory('Tech & Gadgets', this)">Tech & Gadgets</button>
+        <button class="cat-chip" onclick="selectCategory('Festive & Home', this)">Festive & Home</button>
+        <button class="cat-chip" onclick="selectCategory('Games & Puzzles', this)">Games & Puzzles</button>
+      </div>
+    </div>
 
     <!-- Admin Panel -->
     <div class="admin-panel" id="adminPanel">
-      <h3>Add New Product to Findora</h3>
+      <div class="admin-panel-head">
+        <h3>⚡ Add Product to Findora</h3>
+        <button class="admin-key-btn" onclick="logoutAdmin()">Close Admin</button>
+      </div>
       <div class="form-grid">
-        <div class="form-group"><input type="text" id="pId" placeholder="Unique ID (e.g. smart-watch)"></div>
+        <div class="form-group"><input type="text" id="pId" placeholder="Unique ID (e.g. 4k-projector)"></div>
         <div class="form-group"><input type="text" id="pTitle" placeholder="Product Title"></div>
-        <div class="form-group"><input type="text" id="pCategory" placeholder="Category (e.g. Tech)"></div>
+        <div class="form-group"><input type="text" id="pCategory" placeholder="Category (e.g. Tech & Gadgets)"></div>
+        
+        <!-- Marketplace Selection -->
         <div class="form-group">
-          <select id="pStore">
+          <select id="pStore" onchange="toggleCustomStoreFields()">
             <option value="amazon">Amazon</option>
             <option value="flipkart">Flipkart</option>
             <option value="meesho">Meesho</option>
+            <option value="custom">Custom / Other Store ➕</option>
           </select>
         </div>
-        <div class="form-group"><input type="url" id="pImage" placeholder="Image URL (Direct https link)"></div>
-        <div class="form-group"><input type="url" id="pLink" placeholder="Your Affiliate Link"></div>
+
+        <!-- Custom Store inputs (hidden by default) -->
+        <div class="form-group" id="customNameBox" style="display:none;">
+          <input type="text" id="pCustomName" placeholder="Store Name (e.g. Myntra / Ajio)">
+        </div>
+        <div class="form-group" id="customColorBox" style="display:none;">
+          <input type="text" id="pCustomColor" placeholder="Button Color Hex (e.g. #ff3f6c)">
+        </div>
+
+        <div class="form-group"><input type="url" id="pImage" placeholder="Image URL (Direct link)"></div>
+        <div class="form-group"><input type="url" id="pLink" placeholder="Affiliate Target Link"></div>
       </div>
-      <div class="form-group" style="margin-bottom: 15px;">
-        <textarea id="pDesc" rows="2" placeholder="Short description..."></textarea>
+      <div class="form-group" style="margin-bottom: 16px;">
+        <textarea id="pDesc" rows="2" placeholder="Brief 1-2 sentence description..."></textarea>
       </div>
       <div class="admin-btn-row">
-        <button class="btn-submit" onclick="addProduct()">Save & Publish to GitHub</button>
-        <button class="btn-submit" style="background:#4b5563; color:#fff;" onclick="logoutAdmin()">Close Admin</button>
+        <button class="btn-submit" onclick="addProduct()">Publish Directly to GitHub</button>
       </div>
     </div>
 
-    <div class="grid" id="productGrid">
-      <!-- Loaded dynamically via JSON -->
-    </div>
+    <!-- Product Grid -->
+    <div class="grid" id="productGrid"></div>
 
+    <!-- Footer -->
     <footer>
       <p>Disclosure: Findora participates in affiliate marketing programs. We may earn a small referral commission for qualifying purchases made via our links, at no extra cost to you.</p>
+      <p style="margin-top: 6px;">© Findora Curations. All product trademarks belong to their respective marketplace owners.</p>
     </footer>
   </div>
 
@@ -247,48 +511,100 @@
     const FILE_PATH = "products.json";
 
     let products = [];
-    let fileSha = "";
+    let currentCategory = "all";
     let isAdmin = false;
 
-    // Fetch products on page load
     async function fetchProducts() {
       try {
         const res = await fetch(`https://raw.githubusercontent.com/${GITHUB_USERNAME}/${GITHUB_REPO}/main/${FILE_PATH}?nocache=${new Date().getTime()}`);
         products = await res.json();
-        renderProducts();
+        renderProducts(products);
         handleAnchorScroll();
       } catch (err) {
-        console.error("Error loading products:", err);
+        console.error("Failed to load products.json:", err);
       }
     }
 
-    function renderProducts() {
+    function renderProducts(items) {
       const grid = document.getElementById("productGrid");
       grid.innerHTML = "";
 
-      products.forEach((p, idx) => {
-        let storeBtn = "";
-        if (p.store === "amazon") storeBtn = `<a href="${p.link}" target="_blank" rel="nofollow noopener" class="btn btn-amazon">Shop on Amazon</a>`;
-        else if (p.store === "flipkart") storeBtn = `<a href="${p.link}" target="_blank" rel="nofollow noopener" class="btn btn-flipkart">Shop on Flipkart</a>`;
-        else storeBtn = `<a href="${p.link}" target="_blank" rel="nofollow noopener" class="btn btn-meesho">Shop on Meesho</a>`;
+      if (items.length === 0) {
+        grid.innerHTML = `<div style="grid-column: 1/-1; text-align:center; padding: 50px; color: var(--text-muted);">No products found matching your search.</div>`;
+        return;
+      }
+
+      items.forEach((p, idx) => {
+        let storeBtnStyle = "";
+        let storeBtnText = "";
+
+        if (p.store === "amazon") {
+          storeBtnStyle = "background-color: #ff9900; color: #000;";
+          storeBtnText = "Shop on Amazon";
+        } else if (p.store === "flipkart") {
+          storeBtnStyle = "background-color: #2874f0; color: #fff;";
+          storeBtnText = "Shop on Flipkart";
+        } else if (p.store === "meesho") {
+          storeBtnStyle = "background-color: #f43397; color: #fff;";
+          storeBtnText = "Shop on Meesho";
+        } else {
+          // Custom Store
+          const customColor = p.customColor || "#6366f1";
+          storeBtnStyle = `background-color: ${customColor}; color: #fff;`;
+          storeBtnText = `Shop on ${p.customName || 'Store'}`;
+        }
 
         const card = document.createElement("div");
         card.className = "card";
         card.id = p.id;
         card.innerHTML = `
-          <div class="card-img-wrap"><img src="${p.image}" alt="${p.title}"></div>
-          <span class="badge">${p.category}</span>
+          <div class="card-img-wrap"><img src="${p.image}" alt="${p.title}" loading="lazy"></div>
+          <div class="card-meta">
+            <span class="badge">${p.category}</span>
+            <button class="copy-anchor-btn" onclick="copyPinLink('${p.id}')" title="Copy Pin Link">🔗 Pin Link</button>
+          </div>
           <h2 class="card-title">${p.title}</h2>
           <p class="card-desc">${p.desc}</p>
-          ${storeBtn}
-          <div class="card-admin-actions" id="adminAction_${idx}">
-            <button class="btn-delete" onclick="deleteProduct(${idx})">🗑 Delete Product</button>
+          <a href="${p.link}" target="_blank" rel="nofollow noopener" class="btn-buy" style="${storeBtnStyle}">${storeBtnText}</a>
+          <div class="card-admin-actions" id="adminDel_${idx}">
+            <button class="btn-del" onclick="deleteProduct(${idx})">🗑 Delete Product</button>
           </div>
         `;
         grid.appendChild(card);
       });
 
       if (isAdmin) toggleAdminUI(true);
+    }
+
+    function toggleCustomStoreFields() {
+      const storeVal = document.getElementById("pStore").value;
+      const isCustom = storeVal === "custom";
+      document.getElementById("customNameBox").style.display = isCustom ? "block" : "none";
+      document.getElementById("customColorBox").style.display = isCustom ? "block" : "none";
+    }
+
+    function filterProducts() {
+      const q = document.getElementById("searchInput").value.toLowerCase();
+      const filtered = products.filter(p => {
+        const matchesCategory = (currentCategory === "all") || (p.category.toLowerCase() === currentCategory.toLowerCase());
+        const matchesQuery = p.title.toLowerCase().includes(q) || p.desc.toLowerCase().includes(q) || p.category.toLowerCase().includes(q);
+        return matchesCategory && matchesQuery;
+      });
+      renderProducts(filtered);
+    }
+
+    function selectCategory(cat, btn) {
+      currentCategory = cat;
+      document.querySelectorAll(".cat-chip").forEach(c => c.classList.remove("active"));
+      btn.classList.add("active");
+      filterProducts();
+    }
+
+    function copyPinLink(id) {
+      const url = `${window.location.origin}${window.location.pathname}#${id}`;
+      navigator.clipboard.writeText(url).then(() => {
+        alert(`Pinterest Link Copied!\n\n${url}\n\nPaste this as Destination URL on your Pinterest pin.`);
+      });
     }
 
     function handleAnchorScroll() {
@@ -299,12 +615,12 @@
           setTimeout(() => {
             target.scrollIntoView({ behavior: 'smooth', block: 'center' });
             target.classList.add('target-highlight');
-          }, 300);
+          }, 350);
         }
       }
     }
 
-    // Admin Auth
+    // Admin Flow
     function openAdminAuth() {
       if (isAdmin) {
         document.getElementById("adminPanel").style.display = "block";
@@ -329,27 +645,31 @@
       document.getElementById("adminPanel").style.display = "none";
     }
 
-    // Add Product & Push to GitHub via API
     async function addProduct() {
       const pat = sessionStorage.getItem("gh_pat");
-      if (!pat) { alert("Missing token!"); return; }
+      if (!pat) { alert("Access token missing!"); return; }
 
       const id = document.getElementById("pId").value.trim().toLowerCase().replace(/\s+/g, '-');
       const title = document.getElementById("pTitle").value.trim();
       const category = document.getElementById("pCategory").value.trim();
       const store = document.getElementById("pStore").value;
+      const customName = document.getElementById("pCustomName").value.trim();
+      const customColor = document.getElementById("pCustomColor").value.trim();
       const image = document.getElementById("pImage").value.trim();
       const link = document.getElementById("pLink").value.trim();
       const desc = document.getElementById("pDesc").value.trim();
 
       if (!id || !title || !link || !image) {
-        alert("Please fill in ID, Title, Image and Link.");
+        alert("Please complete required fields: ID, Title, Image and Target Link.");
         return;
       }
 
-      const newProduct = { id, title, desc, category, store, image, link };
-      products.push(newProduct);
+      const newProduct = {
+        id, title, desc, category, store, image, link,
+        ...(store === "custom" && { customName: customName || "Visit Store", customColor: customColor || "#6366f1" })
+      };
 
+      products.push(newProduct);
       await saveToGitHub("Add new product: " + title);
     }
 
@@ -364,12 +684,10 @@
       const url = `https://api.github.com/repos/${GITHUB_USERNAME}/${GITHUB_REPO}/contents/${FILE_PATH}`;
 
       try {
-        // Step 1: Get current SHA
         const getRes = await fetch(url, { headers: { Authorization: `token ${pat}` } });
         const getData = await getRes.json();
         const currentSha = getData.sha;
 
-        // Step 2: Upload updated JSON
         const updatedContent = btoa(unescape(encodeURIComponent(JSON.stringify(products, null, 2))));
         const putRes = await fetch(url, {
           method: "PUT",
@@ -385,14 +703,15 @@
         });
 
         if (putRes.ok) {
-          alert("Success! Changes are updated in GitHub.");
-          renderProducts();
-          // Reset inputs
+          alert("Success! Changes updated on GitHub.");
+          renderProducts(products);
           document.getElementById("pId").value = "";
           document.getElementById("pTitle").value = "";
           document.getElementById("pImage").value = "";
           document.getElementById("pLink").value = "";
           document.getElementById("pDesc").value = "";
+          document.getElementById("pCustomName").value = "";
+          document.getElementById("pCustomColor").value = "";
         } else {
           const err = await putRes.json();
           alert("Failed to save: " + err.message);
