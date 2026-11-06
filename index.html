@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Findora | Trending Finds & Gadgets</title>
+  <meta name="description" content="Discover handpicked viral gadgets, festive home essentials, and lifestyle trends curated from Amazon, Flipkart, and Meesho.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            display: ['"Space Grotesk"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              amazon: '#FF9900',
+              flipkart: '#2874F0',
+              meesho: '#F43397',
+              accent: '#10B981',
+              neon: '#6366F1'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background: radial-gradient(circle at 15% 15%, rgba(99, 102, 241, 0.15) 0%, transparent 40%),
+                  radial-gradient(circle at 85% 35%, rgba(244, 51, 151, 0.12) 0%, transparent 45%),
+                  radial-gradient(circle at 50% 90%, rgba(16, 185, 129, 0.1) 0%, transparent 50%),
+                  #07090E;
+      color: #E2E8F0;
+      min-height: 100vh;
+    }
+    .glass-nav {
+      background: rgba(11, 15, 25, 0.75);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .glass-card {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.01) 100%);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .glass-card:hover {
+      border-color: rgba(99, 102, 241, 0.4);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 36px -12px rgba(0, 0, 0, 0.6), 0 0 24px -4px rgba(99, 102, 241, 0.2);
+    }
+    .glow-text {
+      text-shadow: 0 0 20px rgba(99, 102, 241, 0.45);
+    }
+    .badge-blur {
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+    @keyframes pulseGlow {
+      0%, 100% {
+        border-color: #6366F1;
+        box-shadow: 0 0 25px rgba(99, 102, 241, 0.6);
+      }
+      50% {
+        border-color: #F43397;
+        box-shadow: 0 0 40px rgba(244, 51, 151, 0.8);
+      }
+    }
+    .highlight-target {
+      animation: pulseGlow 1.8s ease-in-out 3;
+      border-width: 2px !important;
+    }
+    .toast {
+      transform: translateY(120%);
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .toast.show {
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body class="selection:bg-brand-neon selection:text-white">
+
+  <!-- Header & Navigation -->
+  <header class="sticky top-0 z-40 glass-nav">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-neon via-brand-meesho to-brand-amazon flex items-center justify-center shadow-lg shadow-indigo-500/30">
+          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+          </svg>
+        </div>
+        <div>
+          <span class="font-display font-bold text-2xl tracking-wider text-white glow-text">FINDORA</span>
+          <span class="hidden sm:inline-block ml-2 text-xs font-semibold px-2 py-0.5 rounded-full bg-indigo-950/80 text-indigo-300 border border-indigo-700/50">VERIFIED PICKS</span>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-3 text-xs text-slate-400 font-medium">
+        <span class="hidden md:flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900/60 border border-slate-800">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Multi-Store Sync
+        </span>
+        <a href="#disclosure" class="hover:text-slate-200 transition-colors">Affiliate Policy</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-8 text-center">
+    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/80 border border-slate-800 text-xs font-semibold text-slate-300 mb-6">
+      <span class="text-brand-amazon font-bold">Amazon</span> • 
+      <span class="text-brand-flipkart font-bold">Flipkart</span> • 
+      <span class="text-brand-meesho font-bold">Meesho</span> Curated Deals
+    </div>
+    <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-4">
+      Trending Finds & <span class="bg-gradient-to-r from-brand-neon via-brand-meesho to-brand-amazon bg-clip-text text-transparent">Viral Gadgets</span>
+    </h1>
+    <p class="max-w-2xl mx-auto text-slate-400 text-sm sm:text-base leading-relaxed">
+      Curated directly from our Pinterest channels. Tap any product to verify prices, read specs, and unlock exclusive marketplace promotions.
+    </p>
+
+    <!-- Search & Filters Container -->
+    <div class="mt-8 max-w-3xl mx-auto space-y-5">
+      <!-- Search Bar -->
+      <div class="relative">
+        <input 
+          type="text" 
+          id="searchInput" 
+          placeholder="Search products by name, tag, or category..."
+          class="w-full bg-slate-900/90 border border-slate-800/80 rounded-2xl px-5 py-3.5 pl-12 text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:border-brand-neon focus:ring-1 focus:ring-brand-neon transition-all"
+        >
+        <svg class="w-5 h-5 text-slate-500 absolute left-4 top-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+        </svg>
+      </div>
+
+      <!-- Category Filter Pills -->
+      <div class="flex flex-wrap items-center justify-center gap-2" id="filterPills">
+        <button class="filter-pill active px-4 py-2 rounded-xl text-xs font-bold transition-all bg-indigo-600 text-white shadow-md shadow-indigo-600/30" data-filter="all">All Items</button>
+        <button class="filter-pill px-4 py-2 rounded-xl text-xs font-bold transition-all bg-slate-900/80 border border-slate-800 text-slate-400 hover:text-white" data-filter="tech">Tech & Gadgets</button>
+        <button class="filter-pill px-4 py-2 rounded-xl text-xs font-bold transition-all bg-slate-900/80 border border-slate-800 text-slate-400 hover:text-white" data-filter="festive">Festive & Home</button>
+        <button class="filter-pill px-4 py-2 rounded-xl text-xs font-bold transition-all bg-slate-900/80 border border-slate-800 text-slate-400 hover:text-white" data-filter="fashion">Fashion & Apparel</button>
+        <button class="filter-pill px-4 py-2 rounded-xl text-xs font-bold transition-all bg-slate-900/80 border border-slate-800 text-slate-400 hover:text-white" data-filter="toys">Games & Puzzles</button>
+        <button class="filter-pill px-4 py-2 rounded-xl text-xs font-bold transition-all bg-slate-900/80 border border-slate-800 text-slate-400 hover:text-white" data-filter="wellness">Health & Wellness</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Showcase Grid -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" id="productGrid">
+
+      <!-- Product: WZATCO Projector -->
+      <article class="product-card glass-card rounded-2xl overflow-hidden flex flex-col justify-between" id="wzatco-projector" data-category="tech" data-name="wzatco yuva go pro 4k projector android 12000 lumens home theater">
+        <div>
+          <div class="relative h-56 bg-slate-900 overflow-hidden group">
+            <img src="https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?w=700&auto=format&fit=crop&q=80" alt="WZATCO Projector" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md text-[11px] font-bold bg-amber-500/90 text-black badge-blur">Amazon Prime</span>
+            <span class="absolute top-3 right-3 px-2.5 py-1 rounded-md text-[11px] font-bold bg-indigo-600/90 text-white badge-blur">Viral on Pinterest</span>
+          </div>
+          <div class="p-5">
+            <div class="flex items-center justify-between text-xs text-slate-400 mb-2">
+              <span class="text-emerald-400 font-semibold">★ 4.8 (850+ reviews)</span>
+              <span>4K Ultra HD</span>
+            </div>
+            <h2 class="font-display text-lg font-bold text-white mb-2 leading-snug">WZATCO Yuva Go Pro 4K Projector</h2>
+            <p class="text-xs text-slate-400 leading-relaxed mb-4">Native 1080p, Auto Focus, 12,000 Lumens brightness, with built-in Android 14 streaming Netflix & Prime Video.</p>
+          </div>
+        </div>
+        <div class="p-5 pt-0 space-y-2">
+          <a href="YOUR_AMAZON_AFFILIATE_LINK" target="_blank" rel="nofollow noopener" class="w-full py-3 px-4 rounded-xl font-bold text-xs flex items-center justify-center gap-2 bg-gradient-to-r from-amber-500 to-amber-600 text-slate-950 hover:brightness-110 shadow-lg shadow-amber-500/20 transition-all">
+            <span>View Deal on Amazon</span>
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          </a>
+          <button onclick="copyPinLink('wzatco-projector')" class="w-full py-2 px-3 rounded-lg text-[11px] font-semibold text-slate-400 hover:text-white bg-slate-900/60 border border-slate-800 transition-colors flex items-center justify-center gap-1.5">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+            Copy Pin Target Link
+          </button>
+        </div>
+      </article>
+
+      <!-- Product: DesiDiya Lights -->
+      <article class="product-card glass-card rounded-2xl overflow-hidden flex flex-col justify-between" id="desidiya-lights" data-category="festive" data-name="desidiya 35 feet led pixel string light warm white diwali christmas home decor">
+        <div>
+          <div class="relative h-56 bg-slate-900 overflow-hidden group">
+            <img src="https://images.unsplash.com/photo-1512909006721-3d6018887383?w=700&auto=format&fit=crop&q=80" alt="DesiDiya Lights" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md text-[11px] font-bold bg-amber-500/90 text-black badge-blur">Amazon India</span>
+            <span class="absolute top-3 right-3 px-2.5 py-1 rounded-md text-[11px] font-bold bg-amber-400/20 text-amber-300 border border-amber-400/30 badge-blur">Festive Best-Seller</span>
+          </div>
+          <div class="p-5">
+            <div class="flex items-center justify-between text-xs text-slate-400 mb-2">
+              <span class="text-emerald-400 font-semibold">★ 4.7 (1,200+ reviews)</span>
+              <span>35 Feet Copper</span>
+            </div>
+            <h2 class="font-display text-lg font-bold text-white mb-2 leading-snug">DesiDiya 35 Ft LED Pixel String Lights</h2>
+            <p class="text-xs text-slate-400 leading-relaxed mb-4">360-degree radiant bulb sparkle with durable copper wire. Perfect for Diwali, balconies, and warm indoor mood setups.</p>
+          </div>
+        </div>
+        <div class="p-5 pt-0 space-y-2">
+          <a href="YOUR_AMAZON_AFFILIATE_LINK" target="_blank" rel="nofollow noopener" class="w-full py-3 px-4 rounded-xl font-bold text-xs flex items-center justify-center gap-2 bg-gradient-to-r from-amber-500 to-amber-600 text-slate-950 hover:brightness-110 shadow-lg shadow-amber-500/20 transition-all">
+            <span>View Deal on Amazon</span>
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          </a>
+          <button onclick="copyPinLink('desidiya-lights')" class="w-full py-2 px-3 rounded-lg text-[11px] font-semibold text-slate-400 hover:text-white bg-slate-900/60 border border-slate-800 transition-colors flex items-center justify-center gap-1.5">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+            Copy Pin Target Link
+          </button>
+        </div>
+      </article>
+
+      <!-- Product: Tumbling Tower -->
+      <article class="product-card glass-card rounded-2xl overflow-hidden flex flex-col justify-between" id="tumbling-tower" data-category="toys" data-name="toy imagine 54 pcs wooden tumbling tower game puzzle balance blocks family party">
+        <div>
+          <div class="relative h-56 bg-slate-900 overflow-hidden group">
+            <img src="https://images.unsplash.com/photo-1618842676088-c4d48a6a7c9d?w=700&auto=format&fit=crop&q=80" alt="Wooden Tumbling Tower" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md text-[11px] font-bold bg-amber-500/90 text-black badge-blur">Amazon India</span>
+            <span class="absolute top-3 right-3 px-2.5 py-1 rounded-md text-[11px] font-bold bg-indigo-600/90 text-white badge-blur">Family Favorite</span>
+          </div>
+          <div class="p-5">
+            <div class="flex items-center justify-between text-xs text-slate-400 mb-2">
+              <span class="text-emerald-400 font-semibold">★ 4.9 (450+ reviews)</span>
+              <span>54 Hardwood Pcs</span>
+            </div>
+            <h2 class="font-display text-lg font-bold text-white mb-2 leading-snug">Toy Imagine 54 Pcs Tumbling Tower</h2>
+            <p class="text-xs text-slate-400 leading-relaxed mb-4">Precision-cut wooden stacking blocks with numbered dice for tactical party balance battles with kids and adults.</p>
+          </div>
+        </div>
+        <div class="p-5 pt-0 space-y-2">
+          <a href="YOUR_AMAZON_AFFILIATE_LINK" target="_blank" rel="nofollow noopener" class="w-full py-3 px-4 rounded-xl font-bold text-xs flex items-center justify-center gap-2 bg-gradient-to-r from-amber-500 to-amber-600 text-slate-950 hover:brightness-110 shadow-lg shadow-amber-500/20 transition-all">
+            <span>View Deal on Amazon</span>
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          </a>
+          <button onclick="copyPinLink('tumbling-tower')" class="w-full py-2 px-3 rounded-lg text-[11px] font-semibold text-slate-400 hover:text-white bg-slate-900/60 border border-slate-800 transition-colors flex items-center justify-center gap-1.5">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+            Copy Pin Target Link
+          </button>
+        </div>
+      </article>
+
+      <!-- Product: Poinsettia Flowers -->
+      <article class="product-card glass-card rounded-2xl overflow-hidden flex flex-col justify-between" id="poinsettia-flowers" data-category="festive" data-name="12pcs gold christmas poinsettia flowers artificial tree ornaments glitter wreath">
+        <div>
+          <div class="relative h-56 bg-slate-900 overflow-hidden group">
+            <img src="https://images.unsplash.com/photo-1543258103-a62bdc069871?w=700&auto=format&fit=crop&q=80" alt="Christmas Flowers" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md text-[11px] font-bold bg-amber-500/90 text-black badge-blur">Amazon India</span>
+            <span class="absolute top-3 right-3 px-2.5 py-1 rounded-md text-[11px] font-bold bg-rose-500/20 text-rose-300 border border-rose-500/30 badge-blur">Holiday Pick</span>
+          </div>
+          <div class="p-5">
+            <div class="flex items-center justify-between text-xs text-slate-400 mb-2">
+              <span class="text-emerald-400 font-semibold">★ 4.6 (380+ reviews)</span>
+              <span>Pack of 12 + Clips</span>
+            </div>
+            <h2 class="font-display text-lg font-bold text-white mb-2 leading-snug">12Pcs Gold Christmas Poinsettias</h2>
+            <p class="text-xs text-slate-400 leading-relaxed mb-4">Sparkling gold glitter artificial flowers with clip attachments for holiday trees, DIY wreaths, and garlands.</p>
+          </div>
+        </div>
+        <div class="p-5 pt-0 space-y-2">
+          <a href="YOUR_AMAZON_AFFILIATE_LINK" target="_blank" rel="nofollow noopener" class="w-full py-3 px-4 rounded-xl font-bold text-xs flex items-center justify-center gap-2 bg-gradient-to-r from-amber-500 to-amber-600 text-slate-950 hover:brightness-110 shadow-lg shadow-amber-500/20 transition-all">
+            <span>View Deal on Amazon</span>
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          </a>
+          <button onclick="copyPinLink('poinsettia-flowers')" class="w-full py-2 px-3 rounded-lg text-[11px] font-semibold text-slate-400 hover:text-white bg-slate-900/60 border border-slate-800 transition-colors flex items-center justify-center gap-1.5">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+            Copy Pin Target Link
+          </button>
+        </div>
+      </article>
+
+      <!-- Product: Kurta Set (Flipkart / Meesho) -->
+      <article class="product-card glass-card rounded-2xl overflow-hidden flex flex-col justify-between" id="gosriki-kurta" data-category="fashion" data-name="gosriki womens cotton kurta set dupatta ethnic wear flipkart meesho">
+        <div>
+          <div class="relative h-56 bg-slate-900 overflow-hidden group">
+            <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?w=700&auto=format&fit=crop&q=80" alt="Cotton Kurta Set" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md text-[11px] font-bold bg-blue-600 text-white badge-blur">Flipkart / Meesho</span>
+            <span class="absolute top-3 right-3 px-2.5 py-1 rounded-md text-[11px] font-bold bg-pink-500/20 text-pink-300 border border-pink-500/30 badge-blur">Top Trending</span>
+          </div>
+          <div class="p-5">
+            <div class="flex items-center justify-between text-xs text-slate-400 mb-2">
+              <span class="text-emerald-400 font-semibold">★ 4.4 (3,400+ reviews)</span>
+              <span>Pure Cotton 3-Piece</span>
+            </div>
+            <h2 class="font-display text-lg font-bold text-white mb-2 leading-snug">GoSriKi Women's Pure Cotton Kurta Set</h2>
+            <p class="text-xs text-slate-400 leading-relaxed mb-4">Straight-cut printed ethnic kurta with trousers and matching dupatta. Breathable everyday elegance for office and events.</p>
+          </div>
+        </div>
+        <div class="p-5 pt-0 space-y-2">
+          <div class="grid grid-cols-2 gap-2">
+            <a href="YOUR_FLIPKART_LINK" target="_blank" rel="nofollow noopener" class="py-2.5 px-3 rounded-xl font-bold text-xs flex items-center justify-center gap-1.5 bg-blue-600 hover:bg-blue-500 text-white transition-colors">
+              <span>Flipkart</span>
+              <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+            </a>
+            <a href="YOUR_MEESHO_LINK" target="_blank" rel="nofollow noopener" class="py-2.5 px-3 rounded-xl font-bold text-xs flex items-center justify-center gap-1.5 bg-brand-meesho hover:brightness-110 text-white transition-colors">
+              <span>Meesho</span>
+              <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+            </a>
+          </div>
+          <button onclick="copyPinLink('gosriki-kurta')" class="w-full py-2 px-3 rounded-lg text-[11px] font-semibold text-slate-400 hover:text-white bg-slate-900/60 border border-slate-800 transition-colors flex items-center justify-center gap-1.5">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+            Copy Pin Target Link
+          </button>
+        </div>
+      </article>
+
+      <!-- Product: Multani Kuka Cough Lozenges -->
+      <article class="product-card glass-card rounded-2xl overflow-hidden flex flex-col justify-between" id="multani-kuka" data-category="wellness" data-name="multani kuka cough lozenges tulsi ginger ayurvedic sore throat drops">
+        <div>
+          <div class="relative h-56 bg-slate-900 overflow-hidden group">
+            <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=700&auto=format&fit=crop&q=80" alt="Multani Lozenges" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md text-[11px] font-bold bg-amber-500/90 text-black badge-blur">Amazon India</span>
+            <span class="absolute top-3 right-3 px-2.5 py-1 rounded-md text-[11px] font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 badge-blur">Ayurvedic</span>
+          </div>
+          <div class="p-5">
+            <div class="flex items-center justify-between text-xs text-slate-400 mb-2">
+              <span class="text-emerald-400 font-semibold">★ 4.7 (900+ reviews)</span>
+              <span>48 Drops Pack</span>
+            </div>
+            <h2 class="font-display text-lg font-bold text-white mb-2 leading-snug">Multani Kuka Cough Lozenges</h2>
+            <p class="text-xs text-slate-400 leading-relaxed mb-4">Tulsi and Ginger herbal formulation backed by an 88-year Ayurvedic legacy. Fast relief for sore throat & hoarseness.</p>
+          </div>
+        </div>
+        <div class="p-5 pt-0 space-y-2">
+          <a href="YOUR_AMAZON_AFFILIATE_LINK" target="_blank" rel="nofollow noopener" class="w-full py-3 px-4 rounded-xl font-bold text-xs flex items-center justify-center gap-2 bg-gradient-to-r from-amber-500 to-amber-600 text-slate-950 hover:brightness-110 shadow-lg shadow-amber-500/20 transition-all">
+            <span>View Deal on Amazon</span>
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          </a>
+          <button onclick="copyPinLink('multani-kuka')" class="w-full py-2 px-3 rounded-lg text-[11px] font-semibold text-slate-400 hover:text-white bg-slate-900/60 border border-slate-800 transition-colors flex items-center justify-center gap-1.5">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+            Copy Pin Target Link
+          </button>
+        </div>
+      </article>
+
+      <!-- Product: Aootek Solar Light -->
+      <article class="product-card glass-card rounded-2xl overflow-hidden flex flex-col justify-between" id="aootek-solar" data-category="tech" data-name="aootek 180w solar street light 10000lm outdoor motion sensor waterproof">
+        <div>
+          <div class="relative h-56 bg-slate-900 overflow-hidden group">
+            <img src="https://images.unsplash.com/photo-1508873696983-2df5293cb395?w=700&auto=format&fit=crop&q=80" alt="Solar Street Light" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md text-[11px] font-bold bg-amber-500/90 text-black badge-blur">Amazon India</span>
+            <span class="absolute top-3 right-3 px-2.5 py-1 rounded-md text-[11px] font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 badge-blur">Zero Electricity</span>
+          </div>
+          <div class="p-5">
+            <div class="flex items-center justify-between text-xs text-slate-400 mb-2">
+              <span class="text-emerald-400 font-semibold">★ 4.7 (2,100+ reviews)</span>
+              <span>180W / 10,000LM</span>
+            </div>
+            <h2 class="font-display text-lg font-bold text-white mb-2 leading-snug">Aootek 180W Solar Street Light</h2>
+            <p class="text-xs text-slate-400 leading-relaxed mb-4">IP65 waterproof outdoor security lamp with dual motion sensors and 3 lighting modes. No wiring required.</p>
+          </div>
+        </div>
+        <div class="p-5 pt-0 space-y-2">
+          <a href="YOUR_AMAZON_AFFILIATE_LINK" target="_blank" rel="nofollow noopener" class="w-full py-3 px-4 rounded-xl font-bold text-xs flex items-center justify-center gap-2 bg-gradient-to-r from-amber-500 to-amber-600 text-slate-950 hover:brightness-110 shadow-lg shadow-amber-500/20 transition-all">
+            <span>View Deal on Amazon</span>
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          </a>
+          <button onclick="copyPinLink('aootek-solar')" class="w-full py-2 px-3 rounded-lg text-[11px] font-semibold text-slate-400 hover:text-white bg-slate-900/60 border border-slate-800 transition-colors flex items-center justify-center gap-1.5">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+            Copy Pin Target Link
+          </button>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- Empty State -->
+    <div id="noResults" class="hidden text-center py-20">
+      <p class="text-slate-400 text-sm">No products found matching your search.</p>
+    </div>
+  </main>
+
+  <!-- Legal & Affiliate Disclosure Footer -->
+  <footer id="disclosure" class="border-t border-slate-800/80 bg-slate-950/80 mt-16 py-12 text-xs text-slate-500">
+    <div class="max-w-5xl mx-auto px-4 text-center space-y-4">
+      <p class="font-semibold text-slate-400 uppercase tracking-widest text-[11px]">Affiliate Transparency Disclosure</p>
+      <p class="leading-relaxed">
+        Findora is an independent curation platform and a participant in the Amazon Services LLC Associates Program, Flipkart Affiliate Network, and Meesho affiliate associations. As an affiliate, we earn from qualifying purchases made through links on this page at absolutely <strong>no additional cost to you</strong>. All prices and availability are subject to change by marketplace vendors.
+      </p>
+      <p>© 2026 Findora Finds. Built for Pinterest Creators.</p>
+    </div>
+  </footer>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast fixed bottom-6 right-6 z-50 bg-indigo-600 text-white px-5 py-3 rounded-xl shadow-2xl flex items-center gap-2 text-xs font-semibold">
+    <svg class="w-4 h-4 text-emerald-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+    <span>Pin target link copied to clipboard!</span>
+  </div>
+
+  <script>
+    // Copy Target URL for Pinterest Pins
+    function copyPinLink(productId) {
+      const url = window.location.origin + window.location.pathname + '#' + productId;
+      
+      const el = document.createElement('textarea');
+      el.value = url;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+
+      const toast = document.getElementById('toast');
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 2500);
+    }
+
+    // Hash & URL Query Auto-Highlight for Pinterest Visitors
+    function handleAnchorHighlight() {
+      const hash = window.location.hash.substring(1);
+      const urlParams = new URLSearchParams(window.location.search);
+      const targetId = hash || urlParams.get('item');
+
+      if (targetId) {
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+          setTimeout(() => {
+            targetElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            targetElement.classList.add('highlight-target');
+          }, 300);
+        }
+      }
+    }
+
+    // Category Filtering
+    const filterButtons = document.querySelectorAll('.filter-pill');
+    const cards = document.querySelectorAll('.product-card');
+    const searchInput = document.getElementById('searchInput');
+    const noResults = document.getElementById('noResults');
+
+    function filterItems() {
+      const activeFilter = document.querySelector('.filter-pill.active').dataset.filter;
+      const searchQuery = searchInput.value.toLowerCase().trim();
+      let visibleCount = 0;
+
+      cards.forEach(card => {
+        const category = card.dataset.category;
+        const name = card.dataset.name.toLowerCase();
+
+        const matchesCategory = activeFilter === 'all' || category === activeFilter;
+        const matchesSearch = name.includes(searchQuery);
+
+        if (matchesCategory && matchesSearch) {
+          card.classList.remove('hidden');
+          visibleCount++;
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+
+      noResults.classList.toggle('hidden', visibleCount > 0);
+    }
+
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterButtons.forEach(b => {
+          b.classList.remove('active', 'bg-indigo-600', 'text-white', 'shadow-md', 'shadow-indigo-600/30');
+          b.classList.add('bg-slate-900/80', 'text-slate-400');
+        });
+        btn.classList.add('active', 'bg-indigo-600', 'text-white', 'shadow-md', 'shadow-indigo-600/30');
+        btn.classList.remove('bg-slate-900/80', 'text-slate-400');
+        filterItems();
+      });
+    });
+
+    searchInput.addEventListener('input', filterItems);
+
+    window.addEventListener('DOMContentLoaded', handleAnchorHighlight);
+    window.addEventListener('hashchange', handleAnchorHighlight);
+  </script>
+</body>
+</html>
