@@ -70,5 +70,14 @@
     "store": "amazon",
     "image": "https://i.pinimg.com/736x/80/5e/49/805e490f46937e0524b5ccdf317f6014.jpg",
     "link": "https://link.amazon/B0hdttvyY"
+  },
+  {
+    "id": "ghar-soaps-magic-bar",
+    "title": "Ghar Soaps Sandalwood & Saffron Magic Bar",
+    "desc": "Ayurvedic de-tan and glow bathing soap enriched with sandalwood and saffron extracts to remove pigmentation, even skin tone, and restore radiance.",
+    "category": "Health & Wellness",
+    "store": "amazon",
+    "image": "https://i.pinimg.com/736x/da/9b/24/da9b2447de23d3c131d8820257938a81.jpg",
+    "link": "https://link.amazon/B05YsvevD"
   }
 ]
